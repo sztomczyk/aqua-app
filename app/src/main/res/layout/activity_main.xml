@@ -17,6 +17,156 @@
         tools:layout_editor_absoluteX="76dp"
         tools:layout_editor_absoluteY="175dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wybierz rodzaj ryb, aby dostosować warunki w akwarium"
+            android:paddingBottom="5dp"
+            android:textColor="@color/black">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/gupik"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:clickable="false"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/gupik"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center">
+                </ImageView>
+
+                <TextView
+                    android:clickable="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gupik"
+                    android:textSize="15dp"
+                    android:layout_gravity="center">
+                </TextView>
+
+                <View
+                    android:id="@+id/gupik_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#0046f7"
+                    android:visibility="visible"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pawie_oczko"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:clickable="false"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/pawie_oczko"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center">
+                </ImageView>
+
+                <TextView
+                    android:clickable="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pawie oczko"
+                    android:textSize="15dp"
+                    android:layout_gravity="center">
+                </TextView>
+
+                <View
+                    android:id="@+id/pawie_oczko_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#0046f7"
+                    android:visibility="invisible"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/black_molly"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingRight="10dp">
+
+                <ImageView
+                    android:clickable="false"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/black_molly"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center">
+                </ImageView>
+
+                <TextView
+                    android:clickable="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Black Molly"
+                    android:textSize="15dp"
+                    android:layout_gravity="center">
+                </TextView>
+
+                <View
+                    android:id="@+id/black_molly_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#0046f7"
+                    android:visibility="invisible"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dopasuj"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:clickable="false"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/dopasuj_parametry"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center">
+                </ImageView>
+
+                <TextView
+                    android:clickable="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dopasuj"
+                    android:textSize="15dp"
+                    android:layout_gravity="center">
+                </TextView>
+
+                <View
+                    android:id="@+id/dopasuj_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#0046f7"
+                    android:visibility="invisible"/>
+            </LinearLayout>
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
