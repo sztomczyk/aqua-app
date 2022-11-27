@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private var connected = false
     private var tempConditions = mapOf<String, Int>("gupik" to 20, "pawie_oczko" to 25, "black_molly" to 30)
     private var lightConditions = mapOf<String, Int>("gupik" to 600, "pawie_oczko" to 660, "black_molly" to 700)
+    private var pickedFishType = "gupik"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,19 +42,22 @@ class MainActivity : AppCompatActivity() {
         val gupikLayout: LinearLayout = findViewById(R.id.gupik)
         gupikLayout.setOnClickListener {
             toggleBars(R.id.gupik_bar)
-            simulation("gupik")
+            pickedFishType = "gupik"
+            if (connected) simulation("gupik")
         }
 
         val pawieOczkoLayout: LinearLayout = findViewById(R.id.pawie_oczko)
         pawieOczkoLayout.setOnClickListener {
             toggleBars(R.id.pawie_oczko_bar)
-            simulation("pawie_oczko")
+            pickedFishType = "pawie_oczko"
+            if (connected) simulation("pawie_oczko")
         }
 
         val blackMollyLayout: LinearLayout = findViewById(R.id.black_molly)
         blackMollyLayout.setOnClickListener {
             toggleBars(R.id.black_molly_bar)
-            simulation("black_molly")
+            pickedFishType = "black_molly"
+            if (connected) simulation("black_molly")
         }
 
         val dopasujLayout: LinearLayout = findViewById(R.id.dopasuj)
@@ -78,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         val lastLightLabel: TextView = findViewById(R.id.lastLightLabel)
 
         thread {
-            while (connected) {
+            while (connected && pickedFishType == fishType) {
                 runOnUiThread {
                     val tempCondition = tempConditions[fishType]
                     val lightCondition = lightConditions[fishType]
@@ -86,13 +90,13 @@ class MainActivity : AppCompatActivity() {
                     lastTempLabel.text = "Ostatni pomiar: " + tempValueLabel.text
                     lastLightLabel.text = "Ostatni pomiar: " + lightValueLabel.text
                     tempValueLabel.text = tempCondition?.let {
-                        Random.nextInt(it - 2,
-                            it
+                        Random.nextInt(it,
+                            it + 3
                         ).toString()
                     } + " °C"
                     lightValueLabel.text = lightCondition?.let {
-                        Random.nextInt(it - 10,
-                            it
+                        Random.nextInt(it,
+                            it + 10
                         ).toString()
                     } + " lux"
                 }
